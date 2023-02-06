@@ -24,7 +24,7 @@
     links: 
       - engine
     volumes:
-      - app_logs:/var/log/cybota
+      - app_logs:/var/log/app_logs
       - filebeat_conf:/usr/share/filebeat
     logging:
       driver: "json-file"
