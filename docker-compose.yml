@@ -16,6 +16,23 @@
       options:
         max-size: "50m"
         max-file: "3"
+              
+  filebeat:
+    restart: unless-stopped
+    build: ./filebeat
+    user: root
+    links: 
+      - engine
+    volumes:
+      - app_logs:/var/log/cybota
+      - filebeat_conf:/usr/share/filebeat
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
         
 volumes:
   logstash_conf:
+  app_logs:
+  filebeat_conf:
