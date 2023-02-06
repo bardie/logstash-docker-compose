@@ -1,6 +1,7 @@
- version: "3.3"
- 
- engine:
+version: "3.3"
+
+services:
+  engine:
     build: ./logstash
     restart: unless-stopped
     privileged: true
